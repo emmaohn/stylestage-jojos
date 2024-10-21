@@ -1,44 +1,74 @@
 .page-footer {
-  --logomark-height: 2em;
-  --logomark-padding: 0;
-
   position: relative;
-  padding: 3rem 1rem;
-  background-color: var(--color-primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d2fbf7' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center -34px;
-  color: var(--color-light);
+  padding: 2.2em 1em;
+  margin-top: 2em;
+  border-top: 5px dashed var(--green-300);
 
   &::before {
     @include logomark;
 
     position: absolute;
     left: 50%;
-    width: 2em;
+    width: 1.5em;
     transform: translate(-50%, -100%);
-    background-color: var(--color-background);
-    color: var(--color-primary);
+    background-color: var(--brown-100);
+    border-radius: 20px;
     font-size: 3rem;
     content: "S";
   }
 
   p:first-child {
-    margin-top: 3rem;
-    font-weight: var(--font-weight-strong);
-    letter-spacing: 0.03em;
+    margin-top: 1em;
     text-align: center;
   }
-
   p a {
     color: inherit;
+  }
+  svg path {
+    fill: var(--green-300);
   }
 
   ul {
     grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
+
+    li {
+      text-align: center;
+      display: grid;
+      align-items: center;
+      background-color: var(--green-100);
+      color: var(--green-300);
+      border: 3px solid var(--green-300);
+      border-radius: 10px;
+      font-size: 1.25em;
+      padding: .2em .6em;
+      text-decoration: none;
+    }
   }
 
-  .container > :last-child {
-    margin-bottom: 0;
+  p:nth-child(3), p:nth-child(4) {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 40vh;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      z-index: -1;
+      background-color: var(--green-300);
+    }
+    // background-color: var(--green-300);
+    border: 3px dashed var(--brown-100);
+    padding: 1em;
+    margin-top: -2em;
+  }
+  p:nth-child(3) {
+    margin-top: 6em;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+  }
+  p:nth-child(4) {
+    border-top: none;
+    border-radius: 0 0 15px 15px;
   }
 }
